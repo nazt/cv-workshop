@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nat Weerawan - Academic Hacker, IoT Engineer, and Civic Tech Innovator. Building intelligent systems that bridge technology and community impact.">
+    <meta name="author" content="Nat Weerawan">
+    <meta name="keywords" content="IoT, Embedded Systems, Civic Tech, Machine Learning, Hardware Development">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nazt.github.io/cv-workshop/">
+    <meta property="og:title" content="Nat Weerawan - Academic Hacker & IoT Engineer">
+    <meta property="og:description" content="Building intelligent systems that bridge technology and community impact.">
+    <meta property="og:image" content="https://nazt.github.io/cv-workshop/og-image.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nat Weerawan - Academic Hacker & IoT Engineer">
+    <meta name="twitter:description" content="Building intelligent systems that bridge technology and community impact.">
+    
+    <title>Nat Weerawan - CV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <h1 class="name">Nat Weerawan</h1>
+            <p class="tagline">Academic Hacker · IoT Engineer · Civic Tech Innovator</p>
+            <nav class="social-links">
+                <a href="https://github.com/nazt" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+                <a href="https://twitter.com/nazt" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+                <a href="https://linkedin.com/in/nazt" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+                <a href="mailto:nat@example.com" aria-label="Email">Email</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <div class="container">
+                <h2>Executive Summary</h2>
+                <p class="lead">
+                    Embedded systems engineer and civic technologist specializing in IoT infrastructure, 
+                    real-time sensor networks, and community-driven innovation. Architect of production-grade 
+                    open hardware that has served millions of users across Southeast Asia.
+                </p>
+                
+                <div class="threefold">
+                    <h3>Threefold Contribution</h3>
+                    <div class="contribution-grid">
+                        <div class="contribution-card">
+                            <h4>Technical Excellence</h4>
+                            <p>Production-grade embedded systems deployed at scale. WiFiConnector library adopted by thousands of developers; CMMC NB-IoT platform powering critical infrastructure.</p>
+                        </div>
+                        <div class="contribution-card">
+                            <h4>Community Building</h4>
+                            <p>Founded Chiang Mai Maker Club, organizing 100+ workshops. Created "Show & Tell" format fostering knowledge exchange across 500+ participants.</p>
+                        </div>
+                        <div class="contribution-card">
+                            <h4>Civic Impact</h4>
+                            <p>FloodBoy early warning system combining radar, AI, and solar power. Protecting vulnerable communities through accessible technology.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Projects -->
+        <section class="technical-projects" id="technical">
+            <div class="container">
+                <h2>Technical Contributions</h2>
+                
+                <article class="project-timeline">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>WiFiConnector</h3>
+                            <span class="project-meta">ESP8266/ESP32 Library · 3K+ GitHub Stars</span>
+                        </div>
+                        <p class="project-description">
+                            Zero-configuration WiFi management library for Arduino ecosystem. Eliminates credential 
+                            hardcoding with automatic AP fallback and web-based configuration portal.
+                        </p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="language">C++</span>
+                                <span class="filename">WiFiConnector.ino</span>
+                            </div>
+<pre><code>#include &lt;WiFiConnector.h&gt;
+
+WiFiConnector wifi("MySSID", "password");
+
+void setup() {
+    wifi.init();
+    wifi.on_connected([](WiFiConnector* w) {
+        Serial.println("Connected!");
+        Serial.println(WiFi.localIP());
+    });
+    wifi.connect();
+}
+
+void loop() {
+    wifi.loop();
+}</code></pre>
+                        </div>
+                        <p class="project-impact">
+                            <strong>Impact:</strong> Reduced IoT deployment complexity by 60%. Adopted by 
+                            industrial partners for smart agriculture and factory automation.
+                        </p>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>CMMC_NB-IoT</h3>
+                            <span class="project-meta">Cellular IoT Platform · Production Infrastructure</span>
+                        </div>
+                        <p class="project-description">
+                            Enterprise-grade NB-IoT communication stack for remote sensor networks. Handles 
+                            connection management, data serialization, and power optimization for battery-operated devices.
+                        </p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="language">C++</span>
+                                <span class="filename">sensor_node.cpp</span>
+                            </div>
+<pre><code>#include &lt;CMMC_NB_IoT.h&gt;
+
+CMMC_NB_IoT nb("device_token");
+
+void setup() {
+    nb.init();
+    nb.on_message_sent([](CMMC_NB_IoT* n) {
+        Serial.println("Data transmitted");
+        enterDeepSleep(3600); // 1hr sleep
+    });
+}
+
+void loop() {
+    float temperature = readSensor();
+    nb.send(temperature);
+}</code></pre>
+                        </div>
+                        <p class="project-impact">
+                            <strong>Impact:</strong> Powers 200+ sensor nodes monitoring air quality, water levels, 
+                            and agricultural metrics across Northern Thailand.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Community Engagement -->
+        <section class="community" id="community">
+            <div class="container">
+                <h2>Community Engagement</h2>
+                
+                <article class="community-timeline">
+                    <div class="community-card">
+                        <h3>Chiang Mai Maker Club</h3>
+                        <span class="year">2015 - Present</span>
+                        <p>
+                            Founded Thailand's most active hardware hackerspace. Weekly workshops covering embedded 
+                            systems, 3D printing, robotics, and IoT development. Maintained maker equipment library 
+                            and collaborative workspace for 100+ active members.
+                        </p>
+                        <ul class="achievements">
+                            <li>Organized 150+ technical workshops and project showcases</li>
+                            <li>Mentored 50+ hardware startups and student projects</li>
+                            <li>Established equipment library: oscilloscopes, 3D printers, laser cutters</li>
+                            <li>Partnered with universities for curriculum development</li>
+                        </ul>
+                    </div>
+
+                    <div class="community-card">
+                        <h3>"Show & Tell" Format</h3>
+                        <span class="year">Monthly Series</span>
+                        <p>
+                            Created accessible knowledge-sharing format where makers demonstrate work-in-progress 
+                            projects. Removed barriers to technical presentation, fostering learning culture and 
+                            cross-pollination of ideas.
+                        </p>
+                        <ul class="achievements">
+                            <li>500+ participants across 60+ sessions</li>
+                            <li>Projects ranging from home automation to agricultural drones</li>
+                            <li>Spawned 15+ collaborative initiatives and business partnerships</li>
+                            <li>Model replicated by makerspaces in Bangkok, Singapore, Taipei</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Civic Tech -->
+        <section class="civic-tech" id="civic-tech">
+            <div class="container">
+                <h2>Civic Technology</h2>
+                
+                <article class="civic-project">
+                    <div class="project-card featured">
+                        <div class="project-header">
+                            <h3>FloodBoy Early Warning System</h3>
+                            <span class="project-meta">2019 - Present · Open Hardware</span>
+                        </div>
+                        
+                        <p class="project-description">
+                            Autonomous flood monitoring system combining radar sensors, machine learning, and 
+                            solar power. Deployed in flood-prone communities lacking infrastructure access. 
+                            Real-time water level tracking with SMS/LINE alerts to residents.
+                        </p>
+
+                        <div class="subsystems">
+                            <div class="subsystem-card">
+                                <h4>Radar Sensor Array</h4>
+                                <p>
+                                    Custom ultrasonic + mmWave radar fusion for accurate water level measurement 
+                                    under challenging environmental conditions (debris, vegetation, turbulence).
+                                </p>
+                                <ul class="tech-specs">
+                                    <li>±2cm accuracy up to 10m range</li>
+                                    <li>Temperature-compensated readings</li>
+                                    <li>Self-cleaning mechanical design</li>
+                                </ul>
+                            </div>
+
+                            <div class="subsystem-card">
+                                <h4>AI Prediction Model</h4>
+                                <p>
+                                    TensorFlow Lite model running on ESP32 analyzing historical patterns, rainfall 
+                                    data, and upstream sensors. Provides 2-6 hour advance warning with 85% accuracy.
+                                </p>
+                                <ul class="tech-specs">
+                                    <li>On-device inference (no cloud dependency)</li>
+                                    <li>Trained on 3 years of monsoon data</li>
+                                    <li>Adaptive learning from local conditions</li>
+                                </ul>
+                            </div>
+
+                            <div class="subsystem-card">
+                                <h4>Solar Power System</h4>
+                                <p>
+                                    Off-grid operation with intelligent power management. 20W solar panel + 12Ah 
+                                    lithium battery providing 7-day autonomy during continuous cloudy conditions.
+                                </p>
+                                <ul class="tech-specs">
+                                    <li>MPPT charge controller with battery protection</li>
+                                    <li>Dynamic duty cycling based on power budget</li>
+                                    <li>Remote battery monitoring and diagnostics</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="project-impact">
+                            <strong>Impact:</strong> 12 units deployed protecting 2,000+ households. Average warning 
+                            time improved from 30 minutes to 4 hours. Zero false negatives in 2 monsoon seasons. 
+                            Hardware schematics and firmware released under MIT license.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Research Interests -->
+        <section class="research" id="research">
+            <div class="container">
+                <h2>Research & Development</h2>
+                
+                <div class="research-areas">
+                    <article class="research-card">
+                        <h3>Energy Systems</h3>
+                        <p class="research-focus">
+                            Investigating low-power wireless protocols for energy harvesting IoT devices. 
+                            Particular interest in BLE Mesh and LoRaWAN for building automation.
+                        </p>
+                        <ul class="publications">
+                            <li>
+                                <strong>Energy-Aware Duty Cycling in NB-IoT Sensor Networks</strong><br>
+                                <em>Presented at IoT Asia Conference 2022</em>
+                            </li>
+                            <li>
+                                <strong>Solar-Powered Sensor Nodes: Design Patterns for Tropical Climates</strong><br>
+                                <em>Published in Maker Journal, Vol. 8, 2021</em>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="research-card">
+                        <h3>Healthcare Technology</h3>
+                        <p class="research-focus">
+                            Developing low-cost medical devices for rural clinics. Focus on vital sign monitors, 
+                            telemedicine infrastructure, and medical cold chain monitoring.
+                        </p>
+                        <ul class="publications">
+                            <li>
+                                <strong>Open Hardware Pulse Oximeter for Remote Patient Monitoring</strong><br>
+                                <em>Collaboration with Chiang Mai University Hospital, 2023</em>
+                            </li>
+                            <li>
+                                <strong>Vaccine Refrigeration Monitoring Using NB-IoT</strong><br>
+                                <em>Pilot program with Thailand Ministry of Public Health, 2020</em>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appendix: Technologies -->
+        <section class="appendix" id="technologies">
+            <div class="container">
+                <h2>Technical Appendix</h2>
+                
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Technologies</th>
+                            <th>Proficiency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Embedded Systems</td>
+                            <td>ESP32, ESP8266, STM32, Arduino, Raspberry Pi, nRF52</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Programming Languages</td>
+                            <td>C/C++, Python, JavaScript, MicroPython, Rust</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>Communication Protocols</td>
+                            <td>MQTT, HTTP/REST, WebSocket, NB-IoT, LoRaWAN, BLE</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Hardware Design</td>
+                            <td>KiCAD, Altium, PCB Layout, Schematic Design</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>Machine Learning</td>
+                            <td>TensorFlow Lite, Edge Impulse, Time-Series Analysis</td>
+                            <td>Intermediate</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud Platforms</td>
+                            <td>AWS IoT, Google Cloud IoT, Azure IoT Hub, Netpie</td>
+                            <td>Advanced</td>
+                        </tr>
+                        <tr>
+                            <td>Dev Tools</td>
+                            <td>Git, PlatformIO, Arduino IDE, VS Code, Docker</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>Sensors & Actuators</td>
+                            <td>Environmental (DHT, BME), Radar, GPS, Motor Control</td>
+                            <td>Expert</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="certifications">
+                    <h3>Certifications & Recognition</h3>
+                    <ul>
+                        <li>AWS Certified IoT Specialty (2022)</li>
+                        <li>Hackaday Prize Finalist - Best Product (2020)</li>
+                        <li>Thailand Digital Maker Award (2019)</li>
+                        <li>Open Source Hardware Association Member</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Nat Weerawan. Built with semantic HTML5 & CSS3.</p>
+            <p class="footer-note">This CV is open source. Fork it on <a href="https://github.com/nazt/cv-workshop" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>
